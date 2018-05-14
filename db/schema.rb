@@ -16,11 +16,20 @@ ActiveRecord::Schema.define(version: 20180509121915) do
   enable_extension "plpgsql"
 
   create_table "collections", force: :cascade do |t|
+    t.integer "amount"
+    t.string "reference"
+    t.datetime "collection_date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "invoices", force: :cascade do |t|
+    t.string "brand_manager"
+    t.string "narration"
+    t.integer "amount"
+    t.string "customer_name"
+    t.string "reference"
+    t.datetime "invoice_date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
