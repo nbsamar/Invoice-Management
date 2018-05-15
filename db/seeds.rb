@@ -8,6 +8,12 @@
 
 json_invoice = ActiveSupport::JSON.decode(File.read('db/seeds/invoices.json'))
 
-json.each do |a|
-  
+json_invoice.each do |invoice|
+  Invoice.create!(invoice)
+end
+
+json_collection = ActiveSupport::JSON.decode(File.read('db/seeds/collections.json'))
+
+json_collection.each do |collection|
+    Collection.create!(collection)
 end
