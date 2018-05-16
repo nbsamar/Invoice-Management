@@ -13,7 +13,13 @@ class InvoicesController < ApplicationController
             render :new
         end
     end
+    def index
+        @invoices = Invoice.all
+    end
 
+    def show
+        @invoice = Invoice.find(params[:id])
+    end
     def invoice_params
         params.require(:invoice).permit(:brand_manager, :narration, :amount, :customer_name, :reference, :invoice_date)
     end
