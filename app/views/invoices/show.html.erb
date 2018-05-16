@@ -20,8 +20,18 @@
                 <tbody>
                     <tr>
                         <td><%= @invoice.invoice_date&.strftime("%F") %></td>
+                        <td>New Invoice</td>
                         <td><%= @invoice.amount %></td>
-                        <td><%= @invoice.amount %></td>
+                    </tr>
+                    <tr>
+                        <td><%= @invoice.collections&.first.collection_date.strftime("%F") %></td>
+                        <td>Collection</td>
+                        <td><%= @invoice.collections.first.amount %></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>Balance</td>
+                        <td><%= @invoice.amount - @invoice.collections.first.amount %></td>
                     </tr>
                 </tbody>
             </table>
