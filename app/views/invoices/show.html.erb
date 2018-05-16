@@ -19,7 +19,7 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td><%= @invoice.invoice_date.strftime("%F") %></td>
+                        <td><%= @invoice.invoice_date&.strftime("%F") %></td>
                         <td><%= @invoice.amount %></td>
                         <td><%= @invoice.amount %></td>
                     </tr>

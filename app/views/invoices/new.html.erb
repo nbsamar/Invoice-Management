@@ -1,3 +1,13 @@
-<div>
-    
+<div class="row">
+    <div class="col-md-8">
+        <%= form_for(@invoice) do |i| %>
+            <%= i.text_field :brand_manager %>
+            <%= i.text_field :narration %>
+            <%= i.number_field :amount %>
+            <%= i.text_field :customer_name %>
+            <%= i.text_field :reference %>
+            <%= i.date_field :invoice_date %>
+            <%= i.submit %>
+        <% end %>
+    </div>
 </div>
