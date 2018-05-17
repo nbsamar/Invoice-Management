@@ -21,8 +21,7 @@ class InvoicesController < ApplicationController
         @invoice = Invoice.find(params[:id])
     end
     def pending
-        # @invoice = Invoice.
-        @invoices = Invoice.includes(:invoice).where("amount > ?", 0)
+        @invoices = Invoice.includes(:collections).where("amount < ?", 0)
         render :index
     end
     def invoice_params
