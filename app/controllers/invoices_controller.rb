@@ -20,6 +20,11 @@ class InvoicesController < ApplicationController
     def show
         @invoice = Invoice.find(params[:id])
     end
+    def pending
+        # @invoice = Invoice.
+        @invoices = Invoice.includes(:invoice).where("amount > ?", 0)
+        render :index
+    end
     def invoice_params
         params.require(:invoice).permit(:brand_manager, :narration, :amount, :customer_name, :reference, :invoice_date)
     end
