@@ -26,14 +26,14 @@
                     <% @invoices.each do |invoice| %>
                     <tr>
                         <td><%= link_to invoice.reference, invoice_path(invoice) %></td>
-                        <td><%= invoice.invoice_date %></td>
+                        <td><%= invoice.invoice_date.strftime("%F") %></td>
                         <td><%= invoice.customer_name %></td>
                         <td><%= invoice.brand_manager %></td>
                         <td><%= invoice.narration %></td>
                         <td><%= invoice.amount %></td>
                         <td><%= invoice.amount %></td>
                         <td><%= invoice.amount %></td>
-                        <td><%= invoice.amount %></td>
+                        <td><%= link_to "Add", invoice_collection_path(invoice) %></td>
                     </tr>
                     <% end %>
                 </tbody>

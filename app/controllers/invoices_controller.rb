@@ -15,6 +15,21 @@ class InvoicesController < ApplicationController
     end
     def index
         @invoices = Invoice.all
+        # @invoice = Invoice.find(params[:id])
+        # @collections = @invoice.collections
+        # @amounts = []
+        # @collections.each do |collection|
+        #     @amounts << collection.amount
+        # end
+    end
+    def collection
+        # @invoice = Invoice.find(params[:id])
+        # @collections = @invoice.collections
+        # @amounts = []
+        # @collections.each do |collection|
+        #     @amounts << collection.amount
+        # end
+        @collection = Collection.new
     end
 
     def show
