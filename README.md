@@ -4,3 +4,4 @@
 # However, its not running by default, so you will need to start it with this command in the terminal:
 
 sudo service postgresql start
+# Obviously, only when you are running on C9.
