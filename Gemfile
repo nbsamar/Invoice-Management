@@ -43,6 +43,8 @@ group :development, :test do
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
   gem 'rspec-rails', '~> 3.7'
+  gem 'faker', '~> 1.8', '>= 1.8.7'
+  gem "factory_girl_rails", "~> 4.4.1"
 end
 
 group :development do
@@ -53,6 +55,8 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'rspec-rails', '~> 3.7'
+  gem 'faker', '~> 1.8', '>= 1.8.7'
+  gem "factory_girl_rails", "~> 4.4.1"
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
