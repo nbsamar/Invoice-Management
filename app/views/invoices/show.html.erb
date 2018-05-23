@@ -32,7 +32,7 @@
                         <td></td>
                         <td>Balance</td>
                         <% @total = @invoice.collections %>
-                        <td style="padding: 0.2em"><%= @invoice.amount - @total.sum(:amount) %></td>
+                        <td style="padding: 0.2em"><%= @invoice.amount - @total&.sum(:amount) %></td>
                     </tr>
                 </tbody>
             </table>
