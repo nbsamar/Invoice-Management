@@ -13,6 +13,22 @@ class InvoicesController < ApplicationController
             render :new
         end
     end
+
+# Collection
+    def create_collection
+        @collection = Collection.new(collection_params)
+        if @collection.save
+            flash[:notice] = "Collection Created"
+            redirect_to invoices_path
+        else
+            flash[:error] = @collection.errors.full_messages.join(', ').html_safe
+            render :new
+        end
+    end
+    def collection_params
+        params.require(:collection).permit(:amount, :reference, :collection_date)
+    end
+
     def index
         @invoices = Invoice.all
         # @invoice = Invoice.find(params[:id])
